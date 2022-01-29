@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const ctrl = require('../controllers/index');
+const ctrl = require('../controllers');
 
-router.get('/', ctrl.recipes.idx);
+
 
 module.exports = router;
