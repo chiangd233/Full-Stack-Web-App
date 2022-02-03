@@ -19,9 +19,11 @@ const idx = (req, res) => {
 
 // New
 const newRecipe = (req, res) => {
-    if (err) res.send(err);
-    const context = {recipes: foundRecipes};
-    res.render("recipes/new", context)
+    db.Recipe.find({},(err, foundRecipe) =>{
+        if(err) res.send(err);
+        const context = {recipes: foundRecipe};
+        res.render('recipes/new', context)
+    })
 };
 
 // Create
