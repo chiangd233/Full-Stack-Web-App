@@ -1,10 +1,10 @@
 const Homecook = require("../models/Homecook")
 
 // Google oath
-function index(req, res, next) {
-    Homecook.find({}, function(err, homecook) {
+function index(req, res) {
+    Homecook.find({}, function(err, homecooks) {
      res.render('homecooks/index', {
-      homecook,
+      homecooks,
       user: req.user
       });
     });
